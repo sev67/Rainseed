@@ -1,0 +1,1 @@
+﻿Statically analyzes a Rain database for relationships.

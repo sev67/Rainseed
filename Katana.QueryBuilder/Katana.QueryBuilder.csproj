@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>SqlKata The C# Sql Query Builder</Title>
+    <Description>A powerful Dynamic Sql Query Builder supporting Sql Server, MySql, PostgreSql, Oracle and Firebird</Description>
+    <Authors>Ahmad Moussawi</Authors>
+    <Copyright>Copyright (c) 2017 Ahmad Moussawi</Copyright>
+    <RootNamespace>Katana</RootNamespace>
+    <AssemblyName>Katana</AssemblyName>
+
+    <!-- NuGet settings -->
+    <PackageId>SqlKata</PackageId>
+    <PackageTags>sql;query-builder;dynamic-query</PackageTags>
+    <PackageReleaseNotes>https://github.com/sqlkata/querybuilder</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/sqlkata/querybuilder</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/sqlkata/querybuilder</RepositoryUrl>
+
+    <!-- SourceLink settings -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <TargetFramework>net5.0</TargetFramework>
+
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
+  </ItemGroup>
+</Project>

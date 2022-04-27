@@ -1,0 +1,1 @@
+﻿Compiles dumped DGraph data into a rain database.

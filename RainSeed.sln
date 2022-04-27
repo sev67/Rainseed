@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainSeedCli", "RainSeedCli\RainSeedCli.csproj", "{1DC6A2D3-5323-4F74-AD35-1A36C0C381D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainCompiler", "RainCompiler\RainCompiler.csproj", "{5C0B1BB9-1FE2-42EC-B507-F676A3D7B0D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainBucket", "RainBucket\RainBucket.csproj", "{15B7EC1C-1C8C-47B9-BC44-6DEDD46165AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planter", "Planter\Planter.csproj", "{00D70D62-7F2A-451A-9551-0EFFAF4D0926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardLib", "StandardLib\StandardLib.csproj", "{69C6D6EC-B521-41AA-A91A-6FC3641CE68F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katana.Execution", "Katana.Execution\Katana.Execution.csproj", "{AFD6467F-A472-4374-AC4C-BE1ED69B1456}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katana.QueryBuilder", "Katana.QueryBuilder\Katana.QueryBuilder.csproj", "{1D64B67D-3B61-47E2-94D7-A2C31A4DABF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DC6A2D3-5323-4F74-AD35-1A36C0C381D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC6A2D3-5323-4F74-AD35-1A36C0C381D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC6A2D3-5323-4F74-AD35-1A36C0C381D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC6A2D3-5323-4F74-AD35-1A36C0C381D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C0B1BB9-1FE2-42EC-B507-F676A3D7B0D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C0B1BB9-1FE2-42EC-B507-F676A3D7B0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C0B1BB9-1FE2-42EC-B507-F676A3D7B0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C0B1BB9-1FE2-42EC-B507-F676A3D7B0D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B7EC1C-1C8C-47B9-BC44-6DEDD46165AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B7EC1C-1C8C-47B9-BC44-6DEDD46165AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B7EC1C-1C8C-47B9-BC44-6DEDD46165AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B7EC1C-1C8C-47B9-BC44-6DEDD46165AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D70D62-7F2A-451A-9551-0EFFAF4D0926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D70D62-7F2A-451A-9551-0EFFAF4D0926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D70D62-7F2A-451A-9551-0EFFAF4D0926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D70D62-7F2A-451A-9551-0EFFAF4D0926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C6D6EC-B521-41AA-A91A-6FC3641CE68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C6D6EC-B521-41AA-A91A-6FC3641CE68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C6D6EC-B521-41AA-A91A-6FC3641CE68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C6D6EC-B521-41AA-A91A-6FC3641CE68F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD6467F-A472-4374-AC4C-BE1ED69B1456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD6467F-A472-4374-AC4C-BE1ED69B1456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD6467F-A472-4374-AC4C-BE1ED69B1456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD6467F-A472-4374-AC4C-BE1ED69B1456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D64B67D-3B61-47E2-94D7-A2C31A4DABF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D64B67D-3B61-47E2-94D7-A2C31A4DABF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D64B67D-3B61-47E2-94D7-A2C31A4DABF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D64B67D-3B61-47E2-94D7-A2C31A4DABF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
