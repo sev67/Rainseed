@@ -1,22 +1,39 @@
 ﻿using RainCompiler.Builder;
 using RainCompiler.Linker.Streams;
 using RainCompiler.Models.Data;
+using StandardLib.Types;
 
 namespace RainCompiler.Linker;
 
 abstract public class Linker<T> : ILinker
 {
     private readonly IBuilder<T> _builder;
+    
+    abstract protected ReadOnlySpan<char> ArtifactsPath { get; }
 
     public Linker(IBuilder<T> builder)
     {
         _builder = builder;
     }
+
+    public RainStream Link()
+    {
+        foreach (ConstStr objectFile in _builder.ListObjectFiles())
+        {
+            JObjectCollection header = new ();
+            LinkObject(objectFile, _builder.ReadObjectFile(objectFile), ref header);
+            LinkHeader(objectFile, in header);
+        }
+
+        return new RainStream(ArtifactsPath);
+    }
+
+    abstract protected void LinkObject(ReadOnlySpan<char> objectId, IEnumerable<T> obj, ref JObjectCollection header);
     
-    abstract public RainStreamReader Link();
+    abstract protected void LinkHeader(ReadOnlySpan<char> objectId, in JObjectCollection header);
 }
 
 public interface ILinker
 {
-    RainStreamReader Link();
+    RainStream Link();
 }

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RainCompiler.Lexer;
+using RainCompiler.Lexer.Streams;
 using StandardLib.Friends;
 using StandardLib.Middleware.Disk;
 using StandardLib.Singletons;
@@ -10,12 +11,28 @@ namespace RainCompiler.Builder;
 
 public class RainBuilder : Builder<JObject>
 {
+    private readonly IAppData _appData;
+    
     override protected string ArtifactsPath 
         => "build/obj";
 
-    public RainBuilder(ILexer<JObject> lexer, IAppData appData) 
+    public RainBuilder(ILexer<JObject> lexer, IAppData appData)
     : base(lexer, appData)
-    {/* ... */}
+    {
+        _appData = appData;
+    }
+    
+    override public IEnumerable<JObject> ReadObjectFile(string file)
+    {
+        string path = _appData.GetLogicalPath($"{ArtifactsPath}/{file}");
+        using FileStream fStream = new(path, FileMode.Open, FileAccess.Read);
+        using DomainStreamReader<JObject> reader = new DumpStreamReader(fStream);
+        
+        foreach (JObject value in reader.Read()) yield return value;
+    }
+    
+    override public IEnumerable<ConstStr> ListObjectFiles() 
+        => _appData.ListFiles(ArtifactsPath);
 
     override protected JObject CompileContext(IEnumerable<JObject> context)
     {

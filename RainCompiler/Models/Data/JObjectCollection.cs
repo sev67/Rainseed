@@ -1,12 +1,14 @@
-﻿using StandardLib.Types;
+﻿using System.Collections;
+using Newtonsoft.Json.Linq;
+using StandardLib.Types;
 
 namespace RainCompiler.Models.Data;
 
-public class JObjectCollection
+public class JObjectCollection : IEnumerable<JObjectColumn>
 {
     public Vector<JObjectColumn> Columns
     { get; set; } = new ();
-    
+
     public JObjectColumn? this[string key]
     {
         get
@@ -34,4 +36,20 @@ public class JObjectCollection
             Columns += value;
         }
     }
+
+    public bool Contains(JProperty jprop)
+    {
+        foreach (JObjectColumn jObjectColumn in Columns)
+        {
+            if (jObjectColumn == jprop) return true;
+        }
+
+        return false;
+    }
+
+    public IEnumerator<JObjectColumn> GetEnumerator() 
+    => Columns.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() 
+    => GetEnumerator();
 }

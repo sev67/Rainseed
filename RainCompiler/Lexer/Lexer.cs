@@ -49,7 +49,7 @@ abstract public class Lexer<T> : ILexer<T>
         foreach (T value in reader.Read()) yield return value;
     }
 
-    public IEnumerable<string> ListContexts() 
+    public IEnumerable<ConstStr> ListContexts() 
     => _appData.ListFiles(ArtifactsPath);
 }
 
@@ -61,5 +61,5 @@ public interface ILexer<out T> : ILexer
 public interface ILexer
 {
     void Lex();
-    IEnumerable<string> ListContexts();
+    IEnumerable<ConstStr> ListContexts();
 }

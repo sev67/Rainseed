@@ -1,5 +1,6 @@
 ﻿using RainCompiler.Lexer;
 using StandardLib.Middleware.Disk;
+using StandardLib.Types;
 
 namespace RainCompiler.Builder;
 
@@ -16,9 +17,9 @@ abstract public class Builder<T> : IBuilder<T>
         _appData = appData;
     }
 
-    public IEnumerable<T> ReadObjectFile(string file) => throw new NotImplementedException();
+    abstract public IEnumerable<T> ReadObjectFile(string file);
 
-    public IEnumerable<string> ListObjectFiles() => throw new NotImplementedException();
+    abstract public IEnumerable<ConstStr> ListObjectFiles();
 
     public void Compile()
     {
@@ -54,6 +55,6 @@ public interface IBuilder<out T> : IBuilder
 
 public interface IBuilder
 {
-    IEnumerable<string> ListObjectFiles();
+    IEnumerable<ConstStr> ListObjectFiles();
     void Compile();
 }

@@ -1,4 +1,9 @@
-﻿const int SIGFNSH = 0X000000; //POSIX-compatible process completed successfully.
+﻿using RainCompiler.Lexer.Streams;
+using StandardLib.Friends;
+using StandardLib.Middleware.Disk;
+using RainCompiler = RainCompiler.RainCompiler;
+
+const int SIGFNSH = 0X000000; //POSIX-compatible process completed successfully.
 const int SIGABRT = 0x000006; //POSIX-compatible process ended unexpectedly.
 
 Parser.Default.ParseArguments<RS::ParameterDefinitions>(args)
@@ -23,6 +28,20 @@ Parser.Default.ParseArguments<RS::ParameterDefinitions>(args)
 
 static void Bootstrap(RS::Arguments args)
 {
+    using FileStream fStream = new FileStream(args.DumpFile, FileMode.Open, FileAccess.Read);
+    using DumpStreamReader dReader = new DumpStreamReader(fStream);
+    AppData appData = new (".rs");
+    
+    RC::RainCompiler compiler = new (dReader, appData);
+    if (compiler.HasBuilt())
+    {
+        compiler.Build();
+    }
+    else
+    {
+        compiler.Rebuild();
+    }
+    
     
 }
 

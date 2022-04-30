@@ -2,3 +2,4 @@
 global using CommandLine;
 
 global using RS = RainSeedCli;
+global using RC = RainCompiler;

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
 using StandardLib.Friends;
+using StandardLib.Types;
 
 namespace StandardLib.Middleware.Disk;
 
@@ -88,14 +89,14 @@ sealed public class AppData : IAppData
         fstream.Write(binary, 0, binary.Length);
     }
 
-    public IEnumerable<string> ListFiles(string filePath)
+    public IEnumerable<ConstStr> ListFiles(string filePath)
     {
         filePath = GetLogicalPath(filePath);
         DirectoryInfo place = new(filePath);
         foreach (FileInfo i in place.GetFiles()) yield return i.Name;
     }
     
-    public IEnumerable<string> ListPaths(string filePath)
+    public IEnumerable<ConstStr> ListPaths(string filePath)
     {
         filePath = GetLogicalPath(filePath);
         DirectoryInfo place = new(filePath);
@@ -123,8 +124,8 @@ public interface IAppData
     T Read<T>(string filePath) where T : class;
     void Write(string filepath, string buffer, bool append = false);
     void Write<T>(string filepath, T buffer) where T : class;
-    IEnumerable<string> ListFiles(string filePath);
-    IEnumerable<string> ListPaths(string filePath);
+    IEnumerable<ConstStr> ListFiles(string filePath);
+    IEnumerable<ConstStr> ListPaths(string filePath);
     bool Has(string path);
     void Wipe(string path);
 }
