@@ -8,10 +8,6 @@
         <AssemblyName>RainSeedCli</AssemblyName>
         <RootNamespace>RainSeedCli</RootNamespace>
         <ApplicationIcon>rainseed.ico</ApplicationIcon>
-
-        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
-        <PublishSingleFile>true</PublishSingleFile>
-        <PublishTrimmed>true</PublishTrimmed>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,10 +1,13 @@
-﻿namespace RainCompiler.Linker.Streams;
+﻿using StandardLib.Types;
+
+namespace RainCompiler.Linker.Streams;
 
 public class RainStream : IDisposable
 {
     public const byte SIG_HEADER_CTXT = 0x00;
     public const byte SIG_BODY_CTXT = 0x01;
     public const byte SIG_ID_MUT = 0x02;
+    public const byte SIG_SKIP = 0x03;
     
     private readonly Stream _stream;
     private bool _disposed;
@@ -24,7 +27,7 @@ public class RainStream : IDisposable
     }
     
     public RainStream(ReadOnlySpan<char> filePath)
-    : this(new FileStream(filePath.ToString(), FileMode.OpenOrCreate, FileAccess.ReadWrite))
+    : this(new FileStream(filePath.ToString(), FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite))
     {/* ... */}
 
     virtual public void Flush()

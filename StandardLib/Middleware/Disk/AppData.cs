@@ -92,6 +92,8 @@ sealed public class AppData : IAppData
     public IEnumerable<ConstStr> ListFiles(string filePath)
     {
         filePath = GetLogicalPath(filePath);
+        if (!Directory.Exists(filePath)) yield break;
+        
         DirectoryInfo place = new(filePath);
         foreach (FileInfo i in place.GetFiles()) yield return i.Name;
     }
@@ -99,6 +101,8 @@ sealed public class AppData : IAppData
     public IEnumerable<ConstStr> ListPaths(string filePath)
     {
         filePath = GetLogicalPath(filePath);
+        if (!Directory.Exists(filePath)) yield break;
+        
         DirectoryInfo place = new(filePath);
         foreach (DirectoryInfo i in place.GetDirectories()) yield return i.Name;
     }

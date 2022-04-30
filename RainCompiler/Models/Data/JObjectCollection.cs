@@ -47,6 +47,16 @@ public class JObjectCollection : IEnumerable<JObjectColumn>
         return false;
     }
 
+    public bool HasReferenceTypes()
+    {
+        foreach (JObjectColumn jObjectColumn in Columns)
+        {
+            if (jObjectColumn.Type == JTokenType.Array) return true;
+        }
+
+        return false;
+    }
+
     public IEnumerator<JObjectColumn> GetEnumerator() 
     => Columns.GetEnumerator();
 

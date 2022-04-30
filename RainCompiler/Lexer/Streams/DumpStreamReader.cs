@@ -10,5 +10,14 @@ sealed public class DumpStreamReader : DomainStreamReader<JObject>
     {/* ... */}
 
     override protected JObject? Translate(string buffer)
-    => JsonConvert.DeserializeObject<JObject>(buffer.Trim(new[] {' ', ','}));
+    {
+        try
+        {
+            return JsonConvert.DeserializeObject<JObject>(buffer.Trim(new[] {' ', ','}));
+        }
+        catch
+        {
+            return null;
+        }
+    }
 }
